@@ -32,8 +32,10 @@ stages:
     environment: QA
   jobs:
   - job: QADeployJob1
+    variables:
+      jobNo: Job2
     steps:
-    - bash: echo $(environment)DeployJob1 Step1
+    - bash: echo $(environment)DeployJob1 Step1 for $(jobNo)
 - stage: ProdDeploy
   dependsOn:
   - DevDeploy

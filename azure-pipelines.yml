@@ -1,0 +1,35 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: Build
+  jobs:
+  - job: BuildJob1
+    steps:
+    - bash: echo BuildJob1 Step1
+  - job: BuildJob2
+    steps:
+    - bash: echo BuildJob2 Step1
+    - bash: echo BuildJob2 Step2
+- stage: DevDeploy
+  jobs:
+  - job: DevDeployJob1
+    steps:
+    - bash: echo DevDeployJob1 Step1
+- stage: QADeploy
+  jobs:
+  - job: QADeployJob1
+    steps:
+    - bash: echo QADeployJob1 Step1
+- stage: ProdDeploy
+  jobs:
+  - job: ProdDeployJob1
+    steps:
+    - bash: echo ProdDeployJob1 Step1
+

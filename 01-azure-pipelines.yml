@@ -26,3 +26,18 @@ stages:
         echo Multiline hello world.
         echo Job2
       displayName: 'Run a multi-line script'
+
+  - job: Job3
+    dependsOn: 
+    - Job1
+    - Job2
+    steps:
+    - script: |
+        echo Yet another job.
+        echo Job3
+      displayName: 'Run a multi-line script'
+
+  - job: Job4
+    steps:
+    - script: echo Job4 runs parallel to Job1!
+      displayName: 'Run a one-line script'

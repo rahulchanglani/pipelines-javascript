@@ -1,0 +1,22 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: Build
+  jobs:
+  - job: BuildJob1
+    steps:
+    - bash: echo BuildJob1 Step1
+    - bash: echo $(Build.BuildNumber)
+    - bash: echo $(Build.BuildId) 
+    - bash: echo $(Build.SourceBranchName) 
+    - bash: echo $(Build.SourcesDirectory) 
+    - bash: echo $(System.DefaultWorkingDirectory) 
+    - bash: ls -R $(System.DefaultWorkingDirectory) 
+    - bash: echo $(Build.ArtifactStagingDirectory) 

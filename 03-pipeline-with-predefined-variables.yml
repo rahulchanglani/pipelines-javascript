@@ -22,8 +22,10 @@ stages:
     - bash: echo $(System.ArtifactStagingDirectory)
     - bash: java -version 
     - bash: node --version
+    - bash: ls -R $(System.ArtifactStagingDirectory)
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)'
         Contents: '**/*.yml'
         TargetFolder: '$(Build.ArtifactStagingDirectory)' 
+    - bash: ls -R $(System.ArtifactStagingDirectory)

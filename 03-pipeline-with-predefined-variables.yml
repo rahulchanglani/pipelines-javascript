@@ -21,7 +21,7 @@ stages:
     - bash: ls -R $(System.DefaultWorkingDirectory) 
     - bash: echo $(System.ArtifactStagingDirectory)
     - bash: java -version 
-    - bash: node -version
+    - bash: node --version
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)'

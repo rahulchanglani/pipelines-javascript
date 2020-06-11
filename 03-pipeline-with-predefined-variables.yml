@@ -6,6 +6,12 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+  strategy:
+    matrix:
+      linux:
+        operatingSystem: 'ubuntu-latest'
+      mac:
+        operatingSystem: 'macos-latest'
 
 stages:
 - stage: Build
